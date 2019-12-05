@@ -1,3 +1,5 @@
+import { orangered } from 'color-name'
+
 export default {
   mode: 'universal',
   /*
@@ -11,7 +13,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: 'График выхода цифровых релизов'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -19,7 +21,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: 'orangered' },
   /*
    ** Global CSS
    */

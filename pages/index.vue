@@ -17,7 +17,7 @@
               :img="movie.img"
               :imdb="movie.imdb"
               :kinopoisk="movie.kinopoisk"
-              :date="movie.date"
+              :release="movie.digital_release"
               :year="yearIndex"
               :month="monthIndex"
             />
@@ -25,12 +25,14 @@
         </div>
       </div>
     </div>
+    <Loading v-if="isLoading" />
   </div>
 </template>
 
 <script>
 import MoviePreview from '@/components/MoviePreview'
 import MonthTitle from '@/components/MonthTitle'
+import Loading from '@/components/app/Loading'
 export default {
   head() {
     return {
@@ -44,10 +46,16 @@ export default {
       ]
     }
   },
-  components: { MoviePreview, MonthTitle },
+  data: () => ({
+    isLoading: false
+  }),
+  components: { MoviePreview, MonthTitle, Loading },
   methods: {
-    _loadData() {
-      this.$store.dispatch('loadData')
+    async _loadData() {
+      await this.$store.dispatch('loadData')
+      setTimeout(() => {
+        this.isLoading = false
+      }, 300)
     }
   },
   computed: {

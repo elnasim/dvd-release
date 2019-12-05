@@ -9,7 +9,7 @@
       <div class="movie-preview__bottom">
         <div class="movie-preview__rating">IMDB: {{ imdb }}</div>
         <div class="movie-preview__rating">Кинопоиск: {{ kinopoisk }}</div>
-        <div class="movie-preview__date">{{ date }}</div>
+        <div class="movie-preview__date">{{ release }}</div>
       </div>
     </nuxt-link>
   </div>
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  props: ['title', 'img', 'kinopoisk', 'imdb', 'date', 'year', 'month']
+  props: ['title', 'img', 'kinopoisk', 'imdb', 'release', 'year', 'month']
 }
 </script>
 
@@ -32,6 +32,7 @@ export default {
   overflow: hidden;
   display: block;
   color: #000000;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
 .movie-preview__title {
@@ -53,11 +54,7 @@ export default {
 }
 
 .movie-preview__bottom {
-  border-bottom: 2px solid #000;
-  border-left: 2px solid #000;
-  border-right: 2px solid #000;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
   text-align: center;
+  font-weight: 500;
 }
 </style>
