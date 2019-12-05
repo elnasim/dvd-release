@@ -53,12 +53,24 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: this._movie.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'График выхода цифровых релизов'
+        }
+      ]
+    }
+  },
   computed: {
     _movie() {
       if (this.$store.state.pageData) {
         return this.$store.state.pageData
       } else {
-        return null
+        return ''
       }
     }
   },

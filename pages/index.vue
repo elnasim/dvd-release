@@ -32,6 +32,18 @@
 import MoviePreview from '@/components/MoviePreview'
 import MonthTitle from '@/components/MonthTitle'
 export default {
+  head() {
+    return {
+      title: 'График выхода цифровых релизов',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'График выхода цифровых релизов'
+        }
+      ]
+    }
+  },
   components: { MoviePreview, MonthTitle },
   methods: {
     _loadData() {
