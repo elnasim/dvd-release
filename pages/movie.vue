@@ -119,6 +119,9 @@ export default {
 
 .movie-page__col-img {
   width: 40%;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 }
 
 .movie-page__img {
@@ -127,6 +130,10 @@ export default {
   width: 100%;
   display: block;
   height: 500px;
+  @media (max-width: 767px) {
+    max-width: 400px;
+    margin: 0 auto;
+  }
 }
 
 .movie-page__col-table {
@@ -144,6 +151,9 @@ export default {
       &:first-child {
         font-weight: 500;
         width: 160px;
+        @media (max-width: 479px) {
+          width: 110px;
+        }
       }
       &:last-child {
         width: auto;

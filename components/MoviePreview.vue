@@ -25,6 +25,12 @@ export default {
 .col {
   width: 25%;
   margin-bottom: 20px;
+  @media (max-width: 1199px) {
+    width: 50%;
+  }
+  @media (max-width: 575px) {
+    width: 100%;
+  }
 }
 
 .movie-preview {
@@ -51,6 +57,9 @@ export default {
   height: 300px;
   object-fit: cover;
   display: block;
+  @media (max-width: 1199px) {
+    height: 500px;
+  }
 }
 
 .movie-preview__bottom {
