@@ -23,7 +23,7 @@ export default {
 
 <style lang="scss" scoped>
 .col {
-  width: 25%;
+  width: 33.33%;
   margin-bottom: 20px;
   @media (max-width: 1199px) {
     width: 50%;
