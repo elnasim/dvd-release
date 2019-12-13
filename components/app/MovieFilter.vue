@@ -24,7 +24,7 @@ export default {
 
 <style lang="scss" scoped>
 .movie-filter {
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
   padding: 20px;
   display: flex;
   width: 100%;
@@ -37,10 +37,17 @@ export default {
   font-weight: 500;
   font-size: 18px;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .movie-filter__link {
   color: #000000;
-  text-decoration: underline;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  &:last-child {
+    border-bottom: none;
+  }
 }
 </style>

@@ -38,7 +38,7 @@ export default {
   overflow: hidden;
   display: block;
   color: #000000;
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
 }
 
 .movie-preview__title {
