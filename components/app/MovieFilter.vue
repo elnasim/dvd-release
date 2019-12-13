@@ -1,12 +1,18 @@
 <template>
   <div class="movie-filter">
     <div class="movie-filter__title">Месяц</div>
-    <nuxt-link to="/page?month=december" class="movie-filter__link"
-      >Декабрь</nuxt-link
-    >
-    <nuxt-link to="/" class="movie-filter__link">Январь</nuxt-link>
-    <nuxt-link to="/" class="movie-filter__link">Февраль</nuxt-link>
-    <nuxt-link to="/" class="movie-filter__link">Март</nuxt-link>
+    <nuxt-link to="/page?month=december" class="movie-filter__link">
+      Декабрь
+    </nuxt-link>
+    <nuxt-link to="/page?month=january" class="movie-filter__link">
+      Январь
+    </nuxt-link>
+    <nuxt-link to="/page?month=december" class="movie-filter__link">
+      Февраль
+    </nuxt-link>
+    <nuxt-link to="/page?month=december" class="movie-filter__link">
+      Март
+    </nuxt-link>
   </div>
 </template>
 

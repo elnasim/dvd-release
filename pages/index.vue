@@ -3,24 +3,21 @@
     <div class="container" v-if="data">
       <div class="row">
         <div class="col main-page__data">
-          <div v-for="(year, yearIndex) in data" :key="yearIndex">
-            <div v-for="(month, monthIndex) in year" :key="monthIndex">
-              <div class="row">
-                <MonthTitle :title="`${monthIndex} ${yearIndex}`" />
-              </div>
-              <div class="row">
-                <MoviePreview
-                  v-for="movie in month"
-                  :key="movie.title"
-                  :title="movie.title"
-                  :img="movie.img"
-                  :imdb="movie.imdb"
-                  :kinopoisk="movie.kinopoisk"
-                  :release="movie.digital_release"
-                  :year="yearIndex"
-                  :month="monthIndex"
-                />
-              </div>
+          <div v-for="(month, monthIndex) in data" :key="monthIndex">
+            <div class="row">
+              <MonthTitle :title="`${monthIndex}`" />
+            </div>
+            <div class="row">
+              <MoviePreview
+                v-for="movie in month"
+                :key="movie.title"
+                :title="movie.title"
+                :img="movie.img"
+                :imdb="movie.imdb"
+                :kinopoisk="movie.kinopoisk"
+                :release="movie.digital_release"
+                :month="monthIndex"
+              />
             </div>
           </div>
         </div>
@@ -52,13 +49,14 @@ export default {
   components: { MoviePreview, MonthTitle, MovieFilter },
   methods: {
     async _loadData() {
-      await this.$store.dispatch('loadData')
+      const month = 'december'
+      await this.$store.dispatch('loadData', month)
     }
   },
   computed: {
     data() {
       if (this.$store.state.data) {
-        return this.$store.state.data.data
+        return this.$store.state.data
       } else {
         return null
       }

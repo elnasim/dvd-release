@@ -19,9 +19,10 @@ export const mutations = {
 }
 
 export const actions = {
-  async loadData({ commit }) {
+  async loadData({ commit }, month) {
     const data = await this.$axios.$get('/data.json')
-    commit('LOAD_DATA', data)
+    const obj = { [month]: data.data[month] }
+    commit('LOAD_DATA', obj)
   },
 
   async loadMovie({ commit }, { title, month, year }) {
