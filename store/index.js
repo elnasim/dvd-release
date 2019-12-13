@@ -1,7 +1,16 @@
 export const state = () => ({
   data: null,
   pageData: null,
-  favorite: []
+  favorite: [],
+  movieFilters: [
+    'Декабрь',
+    'Январь',
+    'Февраль',
+    'Март',
+    'Апрель',
+    'Май',
+    'Июнь'
+  ]
 })
 
 export const mutations = {

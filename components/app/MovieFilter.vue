@@ -1,23 +1,25 @@
 <template>
   <div class="movie-filter">
     <div class="movie-filter__title">Месяц</div>
-    <nuxt-link to="/december" class="movie-filter__link">
-      Декабрь
-    </nuxt-link>
-    <nuxt-link to="/january" class="movie-filter__link">
-      Январь
-    </nuxt-link>
-    <nuxt-link to="/december" class="movie-filter__link">
-      Февраль
-    </nuxt-link>
-    <nuxt-link to="/december" class="movie-filter__link">
-      Март
+    <nuxt-link
+      :to="`/${month}`"
+      class="movie-filter__link"
+      v-for="month in _filter"
+      :key="month"
+    >
+      {{ month }}
     </nuxt-link>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    _filter() {
+      return this.$store.state.movieFilters
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

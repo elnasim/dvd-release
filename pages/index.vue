@@ -49,7 +49,23 @@ export default {
   components: { MoviePreview, MonthTitle, MovieFilter },
   methods: {
     async _loadData() {
-      const month = 'december'
+      let date = new Date()
+      const monthIndex = date.getMonth()
+      const months = [
+        'Январь',
+        'Февраль',
+        'Март',
+        'Апрель',
+        'Май',
+        'Июнь',
+        'Июль',
+        'Август',
+        'Сентябрь',
+        'Октябрь',
+        'Ноябрь',
+        'Декабрь'
+      ]
+      const month = months[monthIndex]
       await this.$store.dispatch('loadData', month)
     }
   },
