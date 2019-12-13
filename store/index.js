@@ -25,10 +25,10 @@ export const actions = {
     commit('LOAD_DATA', obj)
   },
 
-  async loadMovie({ commit }, { title, month, year }) {
+  async loadMovie({ commit }, { title, month }) {
     commit('RESET_MOVIE')
     const data = await this.$axios.$get('/data.json')
-    const movie = data.data[year][month].find(item => {
+    const movie = data.data[month].find(item => {
       return item.title === title
     })
     commit('LOAD_MOVIE', movie)

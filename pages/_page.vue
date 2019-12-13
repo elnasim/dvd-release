@@ -49,7 +49,7 @@ export default {
   components: { MoviePreview, MonthTitle, MovieFilter },
   methods: {
     async _loadData() {
-      const month = this.$router.history.current.query.month
+      const month = this.$router.history.current.params.page
       await this.$store.dispatch('loadData', month)
     }
   },

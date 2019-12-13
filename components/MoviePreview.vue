@@ -1,7 +1,7 @@
 <template>
   <div class="col">
     <nuxt-link
-      :to="`movie?title=${title}&year=${year}&month=${month}`"
+      :to="`movie?title=${title}&month=${month}`"
       class="movie-preview"
     >
       <div class="movie-preview__title">{{ title }}</div>
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  props: ['title', 'img', 'kinopoisk', 'imdb', 'release', 'year', 'month']
+  props: ['title', 'img', 'kinopoisk', 'imdb', 'release', 'month']
 }
 </script>
 

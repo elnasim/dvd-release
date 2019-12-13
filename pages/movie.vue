@@ -54,7 +54,6 @@
           ></iframe>
         </div>
       </div>
-      <Loading v-if="isLoading" />
     </div>
   </div>
 </template>
@@ -75,18 +74,11 @@ export default {
     }
   },
   components: { Loading },
-  data: () => ({
-    isLoading: false
-  }),
   methods: {
     async _loadData() {
       const title = this.$router.history.current.query.title
       const month = this.$router.history.current.query.month
-      const year = this.$router.history.current.query.year
-      await this.$store.dispatch('loadMovie', { title, month, year })
-      setTimeout(() => {
-        this.isLoading = false
-      }, 300)
+      await this.$store.dispatch('loadMovie', { title, month })
     }
   },
   computed: {
