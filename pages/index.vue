@@ -1,7 +1,7 @@
 <template>
   <div class="main-page">
     <div class="container" v-if="data">
-      <div class="row">
+      <div class="row main-page-row">
         <div class="col main-page__data">
           <div v-for="(month, monthIndex) in data" :key="monthIndex">
             <div class="row">
@@ -85,8 +85,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.main-page-row {
+  @media (max-width: 767px) {
+    flex-direction: column-reverse;
+  }
+}
 .main-page__data {
   width: 80%;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 }
 
 .main-page__sidebar {

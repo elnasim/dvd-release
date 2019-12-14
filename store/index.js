@@ -25,12 +25,14 @@ export const mutations = {
 
 export const actions = {
   async loadData({ commit, state }, month) {
-    //const data = await this.$axios.$get('http://dvd-release/data.json')
     const data = await this.$axios.$get('/data.json')
+    // const data = await this.$axios.$get(
+    //   'https://movie-dvd-release.github.io/data.json'
+    // )
     let filter = []
-    for (let key in data.data){
+    for (let key in data.data) {
       filter.push(key)
-    }    
+    }
     const obj = { [month]: data.data[month] }
     commit('SET_MOVIE_FILTERS', filter)
     commit('LOAD_DATA', obj)
@@ -38,8 +40,10 @@ export const actions = {
 
   async loadMovie({ commit, state }, { title, month }) {
     commit('RESET_MOVIE')
-    //const data = await this.$axios.$get('http://dvd-release/data.json')
     const data = await this.$axios.$get('/data.json')
+    // const data = await this.$axios.$get(
+    //   'https://movie-dvd-release.github.io/data.json'
+    // )
     const movie = data.data[month].find(item => {
       return item.title === title
     })

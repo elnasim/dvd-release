@@ -28,7 +28,7 @@ export default {
   @media (max-width: 1199px) {
     width: 50%;
   }
-  @media (max-width: 575px) {
+  @media (max-width: 767px) {
     width: 100%;
   }
 }
